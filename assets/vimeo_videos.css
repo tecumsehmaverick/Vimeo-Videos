@@ -1,0 +1,12 @@
+.vimeo_video_container
+{
+	background: #f4f4f4;
+	border: 1px solid rgba(0, 0, 0, 0.246094);
+	padding: 8px;
+	padding-top: 12px;
+	text-align: center;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	margin-bottom: 2px;
+}
