@@ -4,8 +4,8 @@
 		public function about() {
 			return array(
 				'name'			=> 'Field: Vimeo',
-				'version'		=> '0.2',
-				'release-date'	=> '2012-03-07',
+				'version'		=> '0.3',
+				'release-date'	=> '2013-08-02',
 				'author'		=> array(
 					'name'			=> 'Gaya Kessler',
 					'website'		=> 'http://gayadesign.com',
@@ -17,7 +17,7 @@
 		public function getSubscribedDelegates(){
 			return array(
 				array(
-					'page' => '/administration/',
+					'page' => '/backend/',
 					'delegate' => 'AdminPagePreGenerate',
 					'callback' => '__appendResources'
 				)
@@ -26,6 +26,7 @@
 
 		public function __appendResources($context){
 			$page = Administration::instance()->Page;
+			$page->addStylesheetToHead(URL . '/extensions/vimeo_videos/assets/vimeo_videos.css', 'screen', 1000, false);
 		}
 
 		public function uninstall() {

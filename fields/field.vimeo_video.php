@@ -10,8 +10,8 @@
 		Definition:
 	-------------------------------------------------------------------------*/
 
-		public function __construct(&$parent) {
-			parent::__construct($parent);
+		public function __construct() {
+			parent::__construct();
 
 			$this->_name = __('Vimeo Video');
 			$this->_required = true;
@@ -276,6 +276,8 @@
 		public static function createPlayer($video_id = null) {
 			if(is_null($video_id)) return null;
 
+
+
 			$video_url = 'http://player.vimeo.com/video/' . $video_id . '?title=0&amp;byline=0&amp;portrait=0';
 
 			$video = new XMLElement('iframe');
@@ -288,7 +290,11 @@
             $video->setAttribute('mozallowfullscreen', "mozallowfullscreen");
             $video->setAttribute('allowFullScreen', "allowFullScreen");
 
-			return $video;
+            $container = new XMLElement('div');
+			$container->setAttribute('class', 'vimeo_video_container');
+			$container->appendChild($video);
+
+			return $container;
 		}
 
 	}
